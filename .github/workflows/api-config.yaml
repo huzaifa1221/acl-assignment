@@ -17,6 +17,6 @@ jobs:
 
     - name: Renew config map and restart acl deployment to pick-up changes
       run: |
-          kubectl delete cm api-config
+          # kubectl delete cm api-config
           kubectl create configmap api-config --from-file=api-config.yaml
-          kubectl rollout restart deployment acl
+          # kubectl rollout restart deployment acl
