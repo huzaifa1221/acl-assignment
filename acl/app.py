@@ -14,7 +14,7 @@ api_mappings = {m["api_endpoint"].lstrip("/"): m for m in mappings["mappings"]}
 # Database connection details
 db_config = {
     'user': 'postgres',
-    'host': 'database',  # Kubernetes service name
+    'host': 'postgres',  # Kubernetes service name
     'database': 'postgres',
     'password': 'password',
     'port': 5432,
