@@ -19,7 +19,20 @@ or install using any other approach as wished.
     * it will create a postgres database when runs for the **first time** only.
     * change helm install --> helm upgrade for future deployments.
 
-# Deployments
+# Deployments / Iaac / helm
+
+1. ### Acl (Anti-corruption Layer)
+   * this folder holds all the configuration for the acl.
+   * we have a config map api-config (api configuration yaml file) being mounted to path app/config which is used in the acl container for mapping.
+  
+2. ### database
+   * this folder holds all the configuration for the database.
+   * we have a postgres database which needs to be pre seeded with the sql data.
+   * To preseed the database follow the steps one by one ->
+
+      1. after the postgres pod is created execute
+         ``kubectl exec -it <pod id> bash``
+      
 
 
 
