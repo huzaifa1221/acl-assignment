@@ -17,10 +17,10 @@ jobs:
       uses: actions/checkout@v3
 
     - name: build docker image
-      run: docker build -t localhost:54933/acl ./acl
+      run: docker build -t acl ./acl
 
-    - name: push docker image
-      run: docker push localhost:54933/acl
+    # - name: push docker image
+    #   run: docker push acl
         
     - name: deploy
-      run: helm upgrade acl ./helm/acl
+      run: helm install acl ./helm/acl
