@@ -1,15 +1,15 @@
-install docker-desktop for kubernetes cluster and local docker registry, it will include docker as well
-or install using any other approach as wished.
-
-
-How to Setup ?
-1. install docker-desktop for kubernetes cluster and local docker registry, it will include docker as well
-or install using any other approach as wished.
+### How to Setup ?
+1. install docker-desktop for kubernetes cluster and local docker registry. or using any approach
 
 2. Setup self-hosted runner on github by follwing https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/add-runners
+3. deploy database by triggering the db.yaml
+4. deploy config map by triggering the api-config.yaml.
+5. deploy the acl by triggering the acl.yaml
+6. update the workflows as per instruction below for future.
 
 # Anti Corruption Layer Application
 * the code is updated with the data transformation logic.
+* the dockerfile creates docker image with all requirements to make a functional container.
 * The api-config.yaml file holds the api mappings, therefore it is used to create config map which is mounted to out ACL application.
 * our application reads the yaml and converts into a dictionary for easy query.
 * the api therefore matches the request and generate response -> then the response is transformed into the desired json and returned.
