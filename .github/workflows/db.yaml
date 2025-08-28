@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  deploy-db:
     runs-on: self-hosted
     
     steps:
@@ -16,4 +16,4 @@ jobs:
       uses: actions/checkout@v3
         
     - name: deploy
-      run: helm upgrade acl ./helm/database
+      run: helm install postgres ./helm/database
