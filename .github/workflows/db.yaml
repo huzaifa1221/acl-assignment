@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "helm/database/"  
+      - "helm/database/**"  
   workflow_dispatch:
 
 jobs:
