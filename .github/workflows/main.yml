@@ -2,6 +2,7 @@ name: Python Flask CI
 
 on:
   push:
+    branches: [main]
     paths:
       - "acl/**"          # any changes in the 'app' folder
       - "helm/acl/"  
