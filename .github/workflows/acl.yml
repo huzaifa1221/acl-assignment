@@ -23,4 +23,4 @@ jobs:
       run: docker push localhost:5000/acl
         
     - name: deploy
-      run: helm install acl ./helm/acl
+      run: helm upgrade acl ./helm/acl
