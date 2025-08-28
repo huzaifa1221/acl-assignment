@@ -2,4 +2,12 @@ install docker-desktop for kubernetes cluster and local docker registry, it will
 
 or install using any other approach as wished.
 
-```CI/CD``
+#CI/CD
+
+
+
+#Deployments
+
+
+
+#Config as code YAML
