@@ -1,7 +1,22 @@
 install docker-desktop for kubernetes cluster and local docker registry, it will include docker as well
 or install using any other approach as wished.
 
+
+How to Setup ?
+1. install docker-desktop for kubernetes cluster and local docker registry, it will include docker as well
+or install using any other approach as wished.
+
+2. Setup self-hosted runner on github by follwing https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/add-runners
+
+# Anti Corruption Layer Application
+* the code is updated with the data transformation logic.
+* The api-config.yaml file holds the api mappings, therefore it is used to create config map which is mounted to out ACL application.
+* our application reads the yaml and converts into a dictionary for easy query.
+* the api therefore matches the request and generate response -> then the response is transformed into the desired json and returned.
+
 # Deployments / Iaac / helm
+
+Deployments are managed by helm directory.
 
 1. ### Acl (Anti-corruption Layer)
    * this folder holds all the configuration for the acl.
@@ -38,7 +53,7 @@ or install using any other approach as wished.
             ('Charlie'),
             ('Diana');
             
-# Config as code YAML
+# Config as code YAML (api-config.yaml)
 * Config as Code is managed by file api-config.yaml. Developers need to update only this file with api mappings.
 * this file is used to create a config map which is mounted to ACL deployment.
 
