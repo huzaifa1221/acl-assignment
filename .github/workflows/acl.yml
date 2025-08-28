@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "acl/**"          # any changes in the 'app' folder
+      - "acl/**"
       - "helm/acl/**"  
   workflow_dispatch:
 
@@ -18,9 +18,6 @@ jobs:
 
     - name: build docker image
       run: docker build -t acl ./acl
-
-    # - name: push docker image
-    #   run: docker push acl
         
     - name: deploy
       run: helm install acl ./helm/acl
