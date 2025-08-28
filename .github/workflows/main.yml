@@ -18,8 +18,8 @@ jobs:
     - name: build docker image
       run: docker build -t acl ./acl
 
-    - name: push docker image
-      run: docker push acl
+    # - name: push docker image
+    #   run: docker push acl
         
     - name: deploy
       run: helm upgrade acl .
