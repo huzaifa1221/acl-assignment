@@ -1,26 +1,25 @@
 name: Python Flask CI
 
 on:
-  # push:
-  #   branches: [ main ]
-  # pull_request:
-  #   branches: [ main ]
+  push:
+    paths:
+      - "acl/**"          # any changes in the 'app' folder
+      - "helm/acl/"  
   workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: self-hosted  # Use 'macos-latest' if you don't have a self-hosted runner
-
+  build-and-deploy:
+    runs-on: self-hosted
+    
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.11
+    - name: build docker image
+      run: docker build -t acl ./acl
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+    - name: push docker image
+      run: docker push acl
+        
+    - name: deploy
+      run: helm upgrade acl .
