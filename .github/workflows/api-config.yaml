@@ -1,0 +1,21 @@
+name: Api-config
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "./api-config.yaml"
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Renew config map and restart acl deployment to pick-up changes
+      run: |
+          kubectl apply -f configmap api-config --from-file=api-config.yaml
+          kubectl rollout restart deployment acl
