@@ -1,4 +1,4 @@
-### How to Setup ?
+# How to Setup ?
 1. install docker-desktop for kubernetes cluster and local docker registry. or using any approach
 
 2. Setup self-hosted runner on github by follwing https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/add-runners
