@@ -30,8 +30,30 @@ or install using any other approach as wished.
    * we have a postgres database which needs to be pre seeded with the sql data.
    * To preseed the database follow the steps one by one ->
 
-      1. after the postgres pod is created execute
-         ``kubectl exec -it <pod id> bash``
+      1. after the postgres pod is created execute ``kubectl exec -it <pod id> bash``
+      2. once logged in log in to psql ``psql -U postgres``
+      3. create db ``CREATE DATABASE mydb;``
+      4. switch to the db ``\c mydb``
+      5. execute the follwing queries to pre-seed the database.
+            ```CREATE TABLE IF NOT EXISTS mytable (
+                id SERIAL PRIMARY KEY,
+                name VARCHAR(100) NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+            
+            CREATE TABLE IF NOT EXISTS othertable (
+                id SERIAL PRIMARY KEY,
+                name VARCHAR(100) NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+            
+            INSERT INTO mytable (name) VALUES
+            ('Alice'),
+            ('Bob');
+            
+            INSERT INTO othertable (name) VALUES
+            ('Charlie'),
+            ('Diana');
       
 
 
