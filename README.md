@@ -31,7 +31,7 @@ Deployments are managed by helm directory.
       2. once logged in log in to psql ``psql -U postgres``
       3. create db ``CREATE DATABASE mydb;``
       4. switch to the db ``\c mydb``
-      5. execute the follwing queries to pre-seed the database.
+      5. execute the follwing queries to pre-seed the database. (init.sql)
             ```
             CREATE TABLE IF NOT EXISTS mytable (
                 id SERIAL PRIMARY KEY,
