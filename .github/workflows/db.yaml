@@ -14,9 +14,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-
-    # - name: push docker image
-    #   run: docker push acl
         
     - name: deploy
       run: helm upgrade acl ./helm/database
