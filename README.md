@@ -35,7 +35,8 @@ or install using any other approach as wished.
       3. create db ``CREATE DATABASE mydb;``
       4. switch to the db ``\c mydb``
       5. execute the follwing queries to pre-seed the database.
-            ```CREATE TABLE IF NOT EXISTS mytable (
+            ```
+            CREATE TABLE IF NOT EXISTS mytable (
                 id SERIAL PRIMARY KEY,
                 name VARCHAR(100) NOT NULL,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -54,8 +55,5 @@ or install using any other approach as wished.
             INSERT INTO othertable (name) VALUES
             ('Charlie'),
             ('Diana');
-      
-
-
-
+            
 # Config as code YAML
