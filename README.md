@@ -1,8 +1,8 @@
 # How to Setup ?
 1. install docker-desktop for kubernetes cluster and local docker registry. or using any approach
 
-2. Setup self-hosted runner on github by follwing https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/add-runners
-3. deploy database by triggering the db.yaml
+2. Setup your machine as a github self-hosted runner by following https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/add-runners
+3. deploy database by triggering the db.yaml and seed the db.
 4. deploy config map by triggering the api-config.yaml.
 5. deploy the acl by triggering the acl.yaml
 6. update the workflows as per instruction below for future.
